@@ -20,7 +20,7 @@ function controller($scope){
     $scope.iteams=items;
     $scope.valeur=false;
     $scope.v=false;
-    $scope.k=false;
+    
     $scope.add = function(){
        $scope.valeur=true;
     };
@@ -41,8 +41,6 @@ function controller($scope){
            if($scope.index!=null)$scope.iteams.splice(x,1);
     };
 
-    $scope.search=function(){
-      $scope.k=true;
-    };
+
 
 }
