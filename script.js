@@ -29,7 +29,7 @@ function controller($scope){
          quantity: $scope.AddQuantity
        };
 
-       $scope.iteams.push(newItem);
+       if($scope.AddName!=null && $scope.AddQuantity!=null)$scope.iteams.push(newItem);
 
     };
     $scope.delete=function(){
@@ -39,7 +39,7 @@ function controller($scope){
 
 
            var x = $scope.index-1;
-           $scope.iteams.splice(x,1);
+           if($scope.index!=null)$scope.iteams.splice(x,1);
 
 
     };
