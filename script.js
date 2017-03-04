@@ -20,25 +20,25 @@ function controller($scope){
     $scope.iteams=items;
     $scope.valeur=false;
     $scope.v=false;
-    
+
     $scope.add = function(){
        $scope.valeur=true;
     };
-    $scope.ajouter = function(){
+    $scope.ajouter = function(){ 
        var newItem = {
          name : $scope.AddName ,
          quantity: $scope.AddQuantity
        };
 
-       if($scope.AddName!=null && $scope.AddQuantity!=NULL)$scope.iteams.push(newItem);
+       if($scope.AddName==null && $scope.AddQuantity==NULL){
+
+       }
+       else{$scope.iteams.push(newItem);}
 
     };
-    $scope.delete=function(){
-      $scope.v=true;
-    };
-    $scope.remove=function(){
-           var x = $scope.index-1;
-           if($scope.index!=null)$scope.iteams.splice(x,1);
+
+    $scope.remove=function(itemIndex){
+        $scope.iteams.splice(itemIndex,1);
     };
 
 

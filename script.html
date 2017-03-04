@@ -8,28 +8,31 @@
   <body ng-app="app">
 
    <div class="container" ng-controller="ctrl">
-       {{nom}}
-      <ul>
+     <div class="">
+         <input type="text" placeholder="search your item" ng-model="cherche">
+      </div>
+
+      <ol>
             <li ng-repeat="item in iteams | filter:cherche" >
 
-             {{$index+1}}-By {{item.quantity}} of {{item.name}}</li>
-      </ul>
+             By {{item.quantity}} of {{item.name}}
+             <button type="button" name="button" ng-click="remove($index)">Remove</button>
+           </li>
+      </ol>
 
       <button type="button" name="button" ng-click="add()">Add</button>
-      <button type="button" name="button" ng-click="delete()">Remove</button>
+
 
      <div class="" ng-show="valeur">
-               <input type="text" placeholder="name" ng-model="AddName">
-               <input type="number" ng-model="AddQuantity" placeholder="quantity">
+
+
+
+               <input type="text" placeholder="name" ng-model="AddName" required="required">
+               <input type="number" ng-model="AddQuantity" placeholder="quantity" required="required">
                <button type="button" name="button" ng-click="ajouter()"> Add an item </button>
+
        </div>
-       <div class="" ng-show="v">
-          <input type="text" placeholder="index of the element that you want to remove" ng-model="index">
-           <button type="button" name="button" ng-click="remove()">Remove</button>
-       </div>
-       <div class="">
-          <input type="text" placeholder="search your item" ng-model="cherche">
-       </div>
+
    </div>
 
   <script src="angular.js"></script>
